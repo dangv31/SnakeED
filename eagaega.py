@@ -19,7 +19,7 @@ GREEN = (0, 255, 0)
 RED = (255, 0, 0)
 
 # Inicialización de variables
-snake = [(GRID_WIDTH // 2, GRID_HEIGHT // 2), (GRID_WIDTH // 2, (GRID_HEIGHT // 2) + 20), (GRID_WIDTH // 2, (GRID_HEIGHT // 2) + 40)]
+snake = [(GRID_WIDTH // 2, GRID_HEIGHT // 2), (GRID_WIDTH // 2, (GRID_HEIGHT // 2) + 1), (GRID_WIDTH // 2, (GRID_HEIGHT // 2) + 2)]
 snake_direction = (0, 0)
 food = (random.randint(0, GRID_WIDTH - 1), random.randint(0, GRID_HEIGHT - 1))
 score = 0
@@ -73,7 +73,7 @@ def main():
             or snake[0][0] >= GRID_WIDTH
             or snake[0][1] < 0
             or snake[0][1] >= GRID_HEIGHT
-            or snake[0] in snake[1:]
+            #or snake[0] in snake[1:]
         ):
             pygame.quit()
             sys.exit()
