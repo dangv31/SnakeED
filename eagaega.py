@@ -75,7 +75,8 @@ def main():
             or snake[0][1] >= GRID_HEIGHT
             or snake[0] in snake[1:]
         ):
-            pass
+            pygame.quit()
+            sys.exit()
 
         draw_objects()
         pygame.display.flip()
