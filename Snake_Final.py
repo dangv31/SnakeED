@@ -120,14 +120,12 @@ def main():
             # Verificar si ha pasado el tiempo para reaparecer la manzana
             if current_time - start_time >= respawn_time and not draw_apple:
                 apple.respawn(snake.body)
-                start_time = current_time  # Reiniciar el tiempo de inicio
-                respawn_time = random.randint(1, 4) * 1000  # Generar un nuevo tiempo aleatorio
                 draw_apple = True
 
             if snake.body[0] == apple.position:
                 snake.body.append(snake.body[-1])
                 start_time = current_time  # Reiniciar el tiempo de inicio
-                respawn_time = random.randint(1, 4) * 1000  # Generar un nuevo tiempo aleatorio
+                respawn_time = random.randint(1, 3) * 1000  # Generar un nuevo tiempo aleatorio
                 draw_apple = False
 
         draw_objects(snake)
